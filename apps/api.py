@@ -49,7 +49,7 @@ def get_all_user_accounts():
 
 
 @app.route('/user/info', methods=['GET'])
-@token_required
+# @token_required
 def get_one_user(current_user):
     # if not current_user.admin:
 
