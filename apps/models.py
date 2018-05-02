@@ -223,7 +223,6 @@ class BookRateAssociation(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     book_id = db.Column(db.Integer, db.ForeignKey('books.book_id'), primary_key=True)
     rating = db.Column(db.Integer)
-    comment = db.Column(db.TEXT)
     user = db.relationship('User', backref='user_booksRate')
     books = db.relationship('Books', backref='bookRate')
 
@@ -231,8 +230,6 @@ class BookRateAssociation(db.Model):
         self.user_id = user_id
         self.book_id = book_id
         self.rating = rating
-        self.comment = comment
-
 
 class BookRateTotal(db.Model):
     __tablename__ = 'bookrateTotal'
