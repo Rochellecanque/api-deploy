@@ -1,5 +1,6 @@
 from apps import *
 from models import *
+import jwt, sqlalchemy
 
 def token_required(f):
     @wraps(f)
