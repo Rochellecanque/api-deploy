@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="41eb7c7e-b9fa-4518-8804-cbd18cbebae3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/__init__.py" afterPath="$PROJECT_DIR$/apps/__init__.py" />
     </list>
     <ignored path="api-deploy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -511,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525217839971</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="nth depoy">
+      <created>1525241993779</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525241993779</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -546,7 +552,8 @@
     <MESSAGE value="api modified" />
     <MESSAGE value="db modified" />
     <MESSAGE value="deploy1" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploy1" />
+    <MESSAGE value="nth depoy" />
+    <option name="LAST_COMMIT_MESSAGE" value="nth depoy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
