@@ -1,6 +1,5 @@
 from apps import *
 from models import *
-import jwt, sqlalchemy
 
 def token_required(f):
     @wraps(f)
@@ -46,11 +45,11 @@ def get_all_user_accounts():
         user_data['profpic'] = user.profpic
         output.append(user_data)
 
-    return jsonify({'users': output})
+    return jsonify({'users', output})
 
 
 @app.route('/user/info', methods=['GET'])
-# @token_required
+@token_required
 def get_one_user(current_user):
     # if not current_user.admin:
 
@@ -522,3 +521,6 @@ def comment(current_user, user_id):
                 db.session.commit()
             return jsonify({'message': 'ok', 'user_id': user_id})
         return jsonify({'message': 'ok', 'user': user, 'comments': comments, 'name': xs, 'currrent_user': current_user})
+
+# @app.route('/addbok/<int:id>')
+# def addbook(id):

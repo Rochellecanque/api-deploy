@@ -1,16 +1,15 @@
 from flask import Flask, Blueprint, request, abort,url_for, jsonify, g, render_template, make_response,session
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import cast
+import os, sqlalchemy, jwt, datetime
 from flask_httpauth import HTTPBasicAuth
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from flask_cors import CORS
-import os
 
 
 app = Flask(__name__)
-
 
 CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/bookshelf'
@@ -25,15 +24,15 @@ db = SQLAlchemy(app)
 import apps.api
 
 
-# def createDB():
-#     engine = sqlalchemy.create_engine('postgresql://postgres:postgres@localhost') #connects to server
-#     conn = engine.connect()
-#     conn.execute("commit")
-#     conn.execute("create database bookshelf")
-#     conn.close()
-#
-# def createTables():
-#     db.create_all()
-#
-# #createDB()
-# createTables()
+def createDB():
+    engine = sqlalchemy.create_engine('postgresql://postgres:postgres@localhost') #connects to server
+    conn = engine.connect()
+    conn.execute("commit")
+    conn.execute("create database bookshelf")
+    conn.close()
+
+def createTables():
+    db.create_all()
+
+#createDB()
+createTables()

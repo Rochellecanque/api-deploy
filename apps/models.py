@@ -1,6 +1,5 @@
 from flask_login import UserMixin
 from apps import *
-import datetime
 
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
@@ -12,8 +11,6 @@ class User(UserMixin, db.Model):
     contact_number = db.Column(db.String(11))
     birth_date = db.Column(db.DATE, nullable=False)
     gender = db.Column(db.String(6), nullable=False)
-    # longitude = db.Column(db.FLOAT)
-    # latitude = db.Column(db.FLOAT)
     profpic = db.Column(db.TEXT)
     bookshelf_user = db.relationship('Bookshelf', uselist=False, backref='user_bookshelf')
     borrow_bookshelfs = db.relationship('BorrowsAssociation', backref='user_borrow')
@@ -224,6 +221,7 @@ class BookRateAssociation(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     book_id = db.Column(db.Integer, db.ForeignKey('books.book_id'), primary_key=True)
     rating = db.Column(db.Integer)
+    comment = db.Column(db.TEXT)
     user = db.relationship('User', backref='user_booksRate')
     books = db.relationship('Books', backref='bookRate')
 
@@ -231,6 +229,8 @@ class BookRateAssociation(db.Model):
         self.user_id = user_id
         self.book_id = book_id
         self.rating = rating
+        self.comment = comment
+
 
 class BookRateTotal(db.Model):
     __tablename__ = 'bookrateTotal'
