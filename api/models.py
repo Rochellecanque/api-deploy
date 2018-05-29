@@ -361,36 +361,6 @@ class UserCommentAssociation(db.Model):
         self.comment = comment
 
 
-# class Message(db.Model):
-#     __tablename__ = 'message'
-#     message_id = db.Column(db.Integer, primary_key=True)
-#     messageFrom = db.Column(db.Integer, db.ForeignKey('user.id'))
-#     messageTo = db.Column(db.Integer, db.ForeignKey('user.id'))
-#     content = db.Column(db.String(100))
-#     messaging_message = db.relationship('MessageAssociation', backref='messaging')
-#
-#     def __init__(self, messageFrom='', messageTo='', content='' ):
-#         self.messageFrom = messageFrom
-#         self.messageTo = messageTo
-#         self.content = content
-#
-# class MessageAssociation(db.Model):
-#     __tablename__ = 'messaging'
-#     message_id = db.Column(db.Integer, db.ForeignKey('message.message_id'), primary_key=True)
-#     messageFrom = db.Column(db.Integer, db.ForeignKey('user.id'))
-#     messageTo = db.Column(db.Integer, db.ForeignKey('user.id'))
-#     content = db.Column(db.String(100), db.ForeignKey('message.content'))
-#     date = db.Column(db.DATE, nullable=False)
-#     user = db.relationship('User', backref='userMessage')
-#     messaging = db.relationship('Message', backref='hasMessage')
-#
-#     def __init__(self, messageFrom='', messageTo='', content='', date='' ):
-#         self.messageFrom = messageFrom
-#         self.messageTo = messageTo
-#         self.content = content
-#         self.date = date
-
-
 class ActLogs(db.Model):
     __tablename__ = 'actlogs'
     logs = db.Column(db.Integer, primary_key=True)
