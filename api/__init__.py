@@ -7,7 +7,7 @@ import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from flask_cors import CORS
-import openlibrary_api
+import openlibrary
 import requests, json
 
 
