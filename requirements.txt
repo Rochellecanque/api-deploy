@@ -1,6 +1,7 @@
 Flask==0.12.2
 Flask-Bootstrap==3.3.7.1
 Flask-HTTPAuth==3.2.3
+Flask-JWT-Simple==0.0.3
 Flask-login==0.4.1
 Flask-MySQL==1.4.0
 Flask-Psycopg2==1.3
